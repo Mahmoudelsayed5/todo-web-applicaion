@@ -1,21 +1,23 @@
-<table>
-  <caption>
-    My todo's
-  </caption>
-  <thead>
-    <tr>
-      <th>description</th>
-      <th>Target Date</th>
-      <th>is Completed?</th>
-    </tr>
-  </thead>
-  <tbody> 
-    @for (todo of todos; track todo.id) {
+<h1>My Todos</h1>
+
+<div class="container">
+  <table class="table">
+    
+    <thead>
       <tr>
-        <td>{{ todo.description }}</td>
-        <td>{{ todo.targetDate | date | uppercase }}</td>
-        <td>{{ todo.done }}</td>
+        <th>description</th>
+        <th>Target Date</th>
+        <th>is Completed?</th>
       </tr>
-    }
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      @for (todo of todos; track todo.id) {
+        <tr>
+          <td>{{ todo.description }}</td>
+          <td>{{ todo.targetDate | date | uppercase }}</td>
+          <td>{{ todo.done }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
